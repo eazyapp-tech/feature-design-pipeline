@@ -46,10 +46,15 @@ The **generalized core** works for any project. The RentOk specifics live in `re
 
 The pipeline also branches **brownfield** (full code-map grounding) vs **greenfield** (landscape scan) automatically.
 
-## Built on the agent-skills suite
+## Built on two skill ecosystems
 
-Most of the pipeline's skills come from **[Addy Osmani's agent-skills](https://github.com/addyosmani/agent-skills)** (`brainstorming`, `ponytail`, `context-mode`, `understand`/`understand-domain`, `dispatching-parallel-agents`, `api-and-interface-design`, `documentation-and-adrs`, `planning-and-task-breakdown`, `source-driven-development`, `spec-driven-development`, `doubt-driven-development`, and more). Install that suite too for the full experience — the pipeline prefers a dedicated skill over hand-rolling a behavior. This skill is the *orchestration layer* on top.
+This skill is an *orchestration layer* — it composes skills from two excellent open-source collections. Install both for the full experience; the pipeline prefers a dedicated skill over hand-rolling a behavior.
+
+- **[Addy Osmani's agent-skills](https://github.com/addyosmani/agent-skills)** (~85 skills) — the broad backbone: `brainstorming`, `ponytail`, `context-mode`, `understand`/`understand-domain`, `dispatching-parallel-agents`, `api-and-interface-design`, `documentation-and-adrs`, `planning-and-task-breakdown`, `source-driven-development`, `spec-driven-development`, `doubt-driven-development`, and more.
+- **[Matt Pocock's skills](https://github.com/mattpocock/skills)** ("Skills For Real Engineers") — the tighter, opinionated set behind our framing and design discipline: `grill-me` / `grill-with-docs` / `grilling` (the alignment step — interrogate the ask before building), `domain-modeling` (shared language via `CONTEXT.md` + ADRs), `to-prd`, `to-issues` (vertical-slice breakdown), `code-review`, `codebase-design`. Install via `npx skills@latest add mattpocock/skills`.
+
+Both share a philosophy this pipeline follows: **small, composable, adaptable skills over process-owning frameworks (GSD/BMAD/Spec-Kit)** — you keep control of the process. Matt's user-invoked vs model-invoked distinction (orchestrators you type vs discipline the agent reaches for) is the model for how this skill sits on top of the others.
 
 ## Provenance
 
-The pipeline and its skill list were reconciled against three sources: the team's curated skill matrices, the raw session transcripts (what was *actually* invoked), and the installed agent-skills suite — trusting the transcripts where they disagreed. So it reflects what real sessions did, not an idealized list.
+The pipeline and its skill list were reconciled against three sources: the team's curated skill matrices, the raw session transcripts (what was *actually* invoked), and the installed skill ecosystems (Addy Osmani's agent-skills + Matt Pocock's skills) — trusting the transcripts where they disagreed. So it reflects what real sessions did, not an idealized list.
